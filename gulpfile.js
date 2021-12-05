@@ -64,7 +64,9 @@ function clean(params) {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
+  gulp.watch([path.watch.js], js);
 }
+
 let build = gulp.series(clean, gulp.parallel(html, css, js));
 let watch = gulp.parallel(build, watchFiles, bs);
 
